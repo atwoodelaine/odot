@@ -19,5 +19,5 @@ div.alert {
 }
 
 div.flash.success { border: 2px solid green; color: green;}
-div.flash.failure { border: 2px solid red; color: red;}
-div.flash.success { border: 2px solid green; color: green;}
+div.flash.error { border: 2px solid red; color: red;}
+div.flash.notice { border: 2px solid blue; color: blue;}
