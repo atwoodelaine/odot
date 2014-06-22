@@ -43,6 +43,4 @@ describe "Adding todo items" do
 		end 
 		expect(page).to have_content("Content is too short")
 	end
-=end
-
 end
