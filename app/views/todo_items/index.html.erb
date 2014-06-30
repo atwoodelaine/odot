@@ -9,10 +9,8 @@
 				<th width="10%">Functions</th>
 			</tr>
 		</thead>
-		<tbody>
 	<% @todo_list.todo_items.each do |todo_item| %>
-	<div class="todo_list" id="<%= dom_id(todo_item) %>">
-		<h2><%= @todo_list.title %></h2>
+	<tr id="<%= dom_id(todo_item) %>">
 		<td>
 			<% if todo_item.completed? %>
 				<%= todo_item.completed_at %>
@@ -29,7 +27,6 @@
 		</td>
 	</tr>
 	<% end %>
-	</tbody>
 </table>
 
 <p>
