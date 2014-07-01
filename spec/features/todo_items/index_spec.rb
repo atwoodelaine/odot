@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe "Viewing todo items" do
 	let!(:todo_list) { TodoList.create(title: "Grocery List", description: "Groceries") }
+	let(:user) {create(:user)}
+	before { sign_in user, password: "password1234"}
 
 	it "displays the title of the todo list" do
 		visit_todo_list(todo_list)
@@ -19,6 +21,7 @@ describe "Viewing todo items" do
 	it "displays item content when a todo_list has items" do
 		todo_list.todo_items.create(content: "Milk")
 		todo_list.todo_items.create(content: "Eggs")
+
 		visit_todo_list(todo_list)
 		
 		expect(page.all("ul.todo_items li").size).to eq(2)
